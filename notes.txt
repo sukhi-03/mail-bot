@@ -1,1 +1,34 @@
 Plan:
+    Step 1: Set Up Email Fetching
+        Use imaplib to connect to an inbox (e.g., Gmail, Outlook).
+
+        Fetch unread emails, extract sender info & message body.
+
+    Step 2: Implement Query Classification
+        Use simple keyword-based classification (spaCy, NLTK, or regex).
+
+        Optionally, use a TinyLlama (1B) or Phi-3 for better intent detection.
+
+    Step 3: Connect to SQL Database
+        Set up PostgreSQL/MySQL.
+
+        Store:
+
+            Common FAQs with predefined responses.
+
+            Logs of past interactions for improving AI replies.
+
+    Step 4: Deploy Ollama Model
+        Install Ollama (ollama pull phi3 or ollama pull mistral).
+
+        Run inference locally to generate responses.
+
+    Step 5: Build Response Workflow
+        Check SQL first for an existing response.
+
+        If no match, pass the query & context to LLM.
+
+        Use LangChain (optional) for structured prompt handling.
+
+    Step 6: Implement Email Sending
+        Use SMTP (smtplib) to send AI-generated or SQL-fetched responses.
